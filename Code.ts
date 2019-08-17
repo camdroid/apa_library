@@ -9,3 +9,13 @@ function addAPAMenu(title="Default Title") {
   menu.addToUi();
   return menu;
 }
+
+function onOpen(e) {
+  var menu = SpreadsheetApp.getUi().createAddOnMenu("Testing this menu");
+  menu.addItem('Menu Test', 'testMethod');
+  menu.addToUi();
+}
+
+function testMethod() {
+  SpreadsheetApp.getUi().alert('It worked!');
+}
