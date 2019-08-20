@@ -19,3 +19,15 @@ function onOpen(e) {
 function testMethod() {
   SpreadsheetApp.getUi().alert('It worked!');
 }
+
+function parseSpreadsheetData(data, headers) {
+  if (headers == null || data == null || headers.length !== data.length) {
+    log("Header length doesn't match data length", true);
+  }
+  parsedData = {};
+  for (var i=0; i<headers.length; i++) {
+     parsedData[headers[i]] = data[i];
+  }
+  return parsedData;
+
+}
