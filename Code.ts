@@ -38,7 +38,7 @@ const today = () => Utilities.formatDate(new Date(), "CDT", "YYYY-MM-dd");
 
 function moveFileToFolder(file_id, folder_id): null {
   folder = DriveApp.getFolderById(folder_id);
-  baseDocFile = DriveApp.getFileById(baseDocId);
+  baseDocFile = DriveApp.getFileById(file_id);
 
   folder.addFile(baseDocFile);
   DriveApp.getRootFolder().removeFile(baseDocFile);
