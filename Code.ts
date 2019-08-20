@@ -21,6 +21,8 @@ function testMethod() {
 }
 
 function parseSpreadsheetData(data, headers) {
+  // TODO: Probably makes more sense to do this without the headers,
+  // or with `parseHeaders: bool`
   if (headers == null || data == null || headers.length !== data.length) {
     log("Header length doesn't match data length", true);
   }
