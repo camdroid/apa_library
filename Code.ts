@@ -33,3 +33,22 @@ function parseSpreadsheetData(data, headers) {
   return parsedData;
 
 }
+
+const today = () => Utilities.formatDate(new Date(), "CDT", "YYYY-MM-dd");
+
+function moveFileToFolder(file_id, folder_id): null {
+  folder = DriveApp.getFolderById(folder_id);
+  baseDocFile = DriveApp.getFileById(baseDocId);
+
+  folder.addFile(baseDocFile);
+  DriveApp.getRootFolder().removeFile(baseDocFile);
+}
+
+function log(data, debug) {
+  if (debug == null) {
+    debug = true;
+  }
+  if (debug) {
+    Logger.log(data);
+  }
+}
