@@ -52,3 +52,11 @@ function log(data, debug) {
     Logger.log(data);
   }
 }
+
+function setBodyMargin(body: Body, margin: number) {
+  body.setMarginLeft(margin);
+  body.setMarginRight(margin);
+  body.setMarginTop(margin);
+  body.setMarginBottom(margin);
+  return body;
+}
